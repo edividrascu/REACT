@@ -9,9 +9,11 @@ export function App() {
       <hr />
       <HelloWorld />
       <hr />
-      <Welcome name="EDDY" />
+      <Welcome name="EDDY" age="32" />
       <hr />
-      <Welcome />
+      {/* por defecto */}
+      <Welcome  />
+      
     </div>
   );
 }

@@ -5,7 +5,12 @@
 
 
 // PODEMOS HACER UN PREDETERMINADO SI NO SE LE PASA NADA
-export function Welcome({ name = 'alguien!!!' }) {
-    return <p>Welcome, {name}!</p>;
-  }
+export function Welcome({ name = 'alguien', age = 100 }) {
+  return (
+    <div>
+      <p>Welcome, <strong>{name}</strong>!</p>
+      <p>Your age is: {age}.</p>
+    </div>
+  );
+}
 
