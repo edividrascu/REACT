@@ -1,4 +1,4 @@
-import { HelloWorld } from "./src/HelloWorld";
+import { HelloWorld } from "./HelloWorld";
 
 export function App(){
     return(
