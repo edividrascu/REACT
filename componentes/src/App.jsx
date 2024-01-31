@@ -1,7 +1,6 @@
 
-
-import Message from "./Message";
 import { HelloWorld } from "./HelloWorld";
+import { Welcome } from "./Welcome";
 
 export function App() {
   return (
@@ -9,16 +8,10 @@ export function App() {
       <h1>My awesome react</h1>
       <hr />
       <HelloWorld />
-      <HelloWorld />
-      <HelloWorld />
-      <HelloWorld />
-      <HelloWorld />
-      <Message />
+      <hr />
+      <Welcome name="EDDY" />
+      <hr />
+      <Welcome />
     </div>
   );
 }
-// Sí, se puedes usar el componente HelloWorld más de una vez en el componente App. 
-// Cada instancia del componente HelloWorld se renderizará de forma independiente.
-
-// Sí,se puedes renderizar el componente Message directamente dentro del componente App.
-// Esto mostrará el mensaje "¡Qué hermoso día!" directamente 
