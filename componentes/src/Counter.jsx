@@ -1,16 +1,29 @@
 import { useState } from "react"
+import CounterDisplay from "./CounterDisplay";
+import "./Counter.css";
+function Counter({ valorIni, valorDeAumento }) {
+  // Inicializa el estado para el contador
+  let [counter, setCounter] = useState(valorIni);
 
-function Counter({valorIni ,valorDeAuento}) {
-    let [counter,setCounter] = useState(valorIni)
-    
   return (
-    <>
-    <h2>{counter}</h2>
-    <button onClick={()=>{
-        setCounter(counter+valorDeAuento)
-    }}>por {valorDeAuento}</button>
-    </>
-  )
+    <div className="container-counter">
+      
+      <CounterDisplay  counter={counter} />
+
+      {/* Botón de incremento */}
+      <button className="boton boton-incremento" onClick={() => setCounter(counter + valorDeAumento)}>
+        Aumentar por {valorDeAumento}
+      </button>
+
+      {/* Botón de decremento */}
+      <button  className="boton boton-decremento" onClick={() => setCounter(counter - valorDeAumento)}>
+        decrementar por {valorDeAumento}
+      </button>
+
+      {/* Botón de reset */}
+      <button className="boton boton-reset" onClick={() => setCounter(valorIni)}>Restablecerr</button>
+    </div>
+  );
 }
 
 export default Counter

@@ -1,4 +1,3 @@
-
 import AlertClock from "./AlertClock.jsx";
 import Counter from "./Counter.jsx";
 import { HelloWorld } from "./HelloWorld";
@@ -9,6 +8,7 @@ export function App() {
     const data = new Date()
     alert(data)
   }
+
   return (
     <div>
       <h1>My awesome react</h1>
@@ -19,7 +19,8 @@ export function App() {
       <hr />
       <AlertClock dataAlert={fechaApp} />
       <hr />
-      <Counter valorIni={1001} valorDeAuento={100}/>
+      <Counter valorIni={0} valorDeAumento={10}/>
     </div>
   );
 }
+
