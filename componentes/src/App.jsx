@@ -9,7 +9,7 @@ export function App() {
       <hr />
       <HelloWorld />
       <hr />
-      <Welcome name="John" age={18} />
+      <Welcome name="John" age={16} />
 
       <hr />
       

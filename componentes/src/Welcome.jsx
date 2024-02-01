@@ -7,11 +7,17 @@ export function Welcome({ name = 'Anonimo', age }) {
     <div>
       <p>Welcome, <strong>{name}</strong>!</p>
 
-      {/* Primera condición El Age componente se renderiza solo si la agepropiedad es mayor o igual  que 18.*/}
-      {age >= 18 && (
+      {/* Primera condición El Age componente se renderiza solo si la agepropiedad es mayor o igual  que 18 de lo contrario You are very young! .*/}
+      {age >= 18 ? (
         <div>
-          <p>Eres mayor  o igual que 18 años.</p>
+          <p>Eres mayor o igual a 18 años.</p>
           <Age age={age} />
+        </div>
+      ) : (
+        <div>
+          <p> <strong>You are very young!</strong></p>
+          
+          
         </div>
       )}
 
@@ -19,7 +25,7 @@ export function Welcome({ name = 'Anonimo', age }) {
       {age !== undefined && (
         <div>
           <p>La edad está definida.</p>
-          <Age age={age} />
+          
         </div>
       )}
 
