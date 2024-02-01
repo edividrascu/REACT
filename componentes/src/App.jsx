@@ -9,10 +9,10 @@ export function App() {
       <hr />
       <HelloWorld />
       <hr />
-      <Welcome name="EDDY" age="32" />
+      <Welcome name="John" age={18} />
+
       <hr />
-      {/* por defecto */}
-      <Welcome  />
+      
       
     </div>
   );
