@@ -4,7 +4,16 @@ export default function MouseClicker() {
         console.log(event.target.name) //ouch
         // imprime el "ouch" pasado como name
     }
-  return (
-    <button name="ouch"className="boton" onClick={handleButtonClick}>Pegame</button>
-  )
+
+    function handleimageClick(event) {
+		event.stopPropagation();
+		console.log(event.target.alt)	
+	}
+
+    return (
+        <button name= "ouch" onClick={handleButtonClick}>
+                <img onClick={handleimageClick} src="fist.png" alt="Img" width={23} height={23}/>
+                Click me!
+            </button>
+      )
 }

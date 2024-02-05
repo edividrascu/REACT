@@ -10,6 +10,7 @@ export default function Clock() {
     },[date])
   return <div>
     <h2>Tiempo actual: {date.toLocaleTimeString()}</h2>
+    
   </div>
   
 }
