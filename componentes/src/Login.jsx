@@ -11,7 +11,9 @@ const Login = ({ onLogin }) => {
   };
   
   const loginCompleted = formData.username.trim() === '' || formData.password.trim() === '';
-  
+  function resetForm() {
+    setFormData({ username: '', password: '', remember: false });
+  }
   console.log('Username:', formData.username);
   console.log('Password:', formData.password);
   console.log('Remember:', formData.remember);
@@ -32,6 +34,7 @@ const Login = ({ onLogin }) => {
       <button type="submit" disabled={loginCompleted} onClick={() => onLogin(formData)}>
         Login
       </button>
+      <button onClick={resetForm}>Reset</button>
       <Welcome name={formData.username} />
     </form>
   );
