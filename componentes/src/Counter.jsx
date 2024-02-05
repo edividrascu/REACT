@@ -4,11 +4,7 @@ import "./Counter.css";
 function Counter({ valorIni, valorDeAumento }) {
   // Inicializa el estado para el contador
   let [counter, setCounter] = useState(valorIni);
-  
-  useEffect(()=>{
-    console.log(`El valor del contador es: ${counter}`)
-  },[counter])
-
+ 
   return (
     <div className="container-counter">
       

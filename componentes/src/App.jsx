@@ -1,4 +1,5 @@
 import AlertClock from "./AlertClock.jsx";
+import Clock from "./Clock.jsx";
 import Counter from "./Counter.jsx";
 import { HelloWorld } from "./HelloWorld";
 import { Welcome } from "./Welcome";
@@ -20,6 +21,8 @@ export function App() {
       <AlertClock dataAlert={fechaApp} />
       <hr />
       <Counter valorIni={0} valorDeAumento={10}/>
+      <hr />
+      <Clock/>
     </div>
   );
 }
