@@ -13,7 +13,7 @@ export default function MouseClicker() {
     return (
         <button name= "ouch" onClick={handleButtonClick}>
                 <img onClick={handleimageClick} src="fist.png" alt="Img" width={23} height={23}/>
-                Click me!
+                Pegame
             </button>
       )
 }
