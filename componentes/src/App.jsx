@@ -2,6 +2,7 @@ import AlertClock from "./AlertClock.jsx";
 import Clock from "./Clock.jsx";
 import Counter from "./Counter.jsx";
 import { HelloWorld } from "./HelloWorld";
+import InteractiveWelcome from "./InteractiveWelcome.jsx";
 import MouseClicker from "./MouseClicker.jsx";
 import { Welcome } from "./Welcome";
 
@@ -26,6 +27,8 @@ export function App() {
       <Clock/>
       <hr />
       <MouseClicker/>
+      <hr />
+      <InteractiveWelcome/>
     </div>
   );
 }
