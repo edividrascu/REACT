@@ -2,6 +2,7 @@ import AlertClock from "./AlertClock.jsx";
 import Clock from "./Clock.jsx";
 import Counter from "./Counter.jsx";
 import { HelloWorld } from "./HelloWorld";
+import MouseClicker from "./MouseClicker.jsx";
 import { Welcome } from "./Welcome";
 
 export function App() {
@@ -23,6 +24,8 @@ export function App() {
       <Counter valorIni={0} valorDeAumento={10}/>
       <hr />
       <Clock/>
+      <hr />
+      <MouseClicker/>
     </div>
   );
 }
