@@ -3,7 +3,7 @@ import Clock from "./Clock.jsx";
 import Counter from "./Counter.jsx";
 import { HelloWorld } from "./HelloWorld";
 
-import Login from "./Login.jsx";
+import Login from './Login';
 import MouseClicker from "./MouseClicker.jsx";
 import { Welcome } from "./Welcome";
 
@@ -12,7 +12,9 @@ export function App() {
     const data = new Date()
     alert(data)
   }
-
+  const handleLogin = (userData) => {
+    console.log(userData);
+  };
   return (
     <div>
       <h1>My awesome react</h1>
@@ -29,7 +31,7 @@ export function App() {
       <hr />
       <MouseClicker/>
       <hr />
-      <Login/>
+      <Login onLogin={handleLogin} />
 
     </div>
   );

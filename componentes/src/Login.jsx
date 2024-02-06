@@ -15,13 +15,16 @@ const Login = ({ onLogin }) => {
     setFormData({ username: '', password: '', remember: false });
   }
   const handleLogin = (event) => {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del envío del formulario
+    event.preventDefault();
     onLogin(formData);
   };
 
   console.log('Username:', formData.username);
   console.log('Password:', formData.password);
   console.log('Remember:', formData.remember);
+  function handleLoginButton() {
+    console.log("Login button pressed",formData)
+  }git 
   return (
     <form onSubmit={handleLogin}>
       <div>
@@ -36,9 +39,9 @@ const Login = ({ onLogin }) => {
         <label htmlFor="checkbox">Remember me</label>
         <input id="checkbox" name="remember" type="checkbox" checked={formData.remember} onChange={handleChange} />
       </div>
-      <button type="submit" disabled={loginCompleted}>
-  Login
-</button>
+      <button type="submit" disabled={loginCompleted} onClick={handleLoginButton}>
+        Login
+      </button>
       <button onClick={resetForm}>Reset</button>
       <Welcome name={formData.username} />
     </form>
