@@ -24,7 +24,7 @@ const Login = ({ onLogin }) => {
   console.log('Remember:', formData.remember);
   function handleLoginButton() {
     console.log("Login button pressed",formData)
-  }git 
+  }
   return (
     <form onSubmit={handleLogin}>
       <div>
