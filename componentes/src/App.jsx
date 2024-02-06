@@ -37,6 +37,8 @@ export function App() {
       {/* <UncontrolledLogin/> */}
       <br />
       <FocusableInput/>
+      <hr />
+      
     </div>
   );
 }
