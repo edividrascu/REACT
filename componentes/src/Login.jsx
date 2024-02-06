@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Welcome } from './Welcome';
 
 const Login = ({ onLogin }) => {
   const [formData, setFormData] = useState({ username: '', password: '', remember: false });
-
+  const _inputRef = useRef(null)
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
     setFormData((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));

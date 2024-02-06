@@ -1,6 +1,7 @@
 import AlertClock from "./AlertClock.jsx";
 import Clock from "./Clock.jsx";
 import Counter from "./Counter.jsx";
+import FocusableInput from "./FocusableInput.jsx";
 import { HelloWorld } from "./HelloWorld";
 
 import Login from './Login';
@@ -32,8 +33,10 @@ export function App() {
       <hr />
       <MouseClicker/>
       <hr />
-      {/* <Login onLogin={handleLogin} /> */}
-      <UncontrolledLogin/>
+      <Login onLogin={handleLogin} />
+      {/* <UncontrolledLogin/> */}
+      <br />
+      <FocusableInput/>
     </div>
   );
 }
