@@ -5,6 +5,7 @@ import { HelloWorld } from "./HelloWorld";
 
 import Login from './Login';
 import MouseClicker from "./MouseClicker.jsx";
+import { UncontrolledLogin } from "./UncontrolledLogin.jsx";
 import { Welcome } from "./Welcome";
 
 export function App() {
@@ -31,8 +32,8 @@ export function App() {
       <hr />
       <MouseClicker/>
       <hr />
-      <Login onLogin={handleLogin} />
-
+      {/* <Login onLogin={handleLogin} /> */}
+      <UncontrolledLogin/>
     </div>
   );
 }
