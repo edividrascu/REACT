@@ -1,5 +1,6 @@
 import AlertClock from "./AlertClock.jsx";
 import Clock from "./Clock.jsx";
+import Colors from "./Colors.jsx";
 import Counter from "./Counter.jsx";
 import FocusableInput from "./FocusableInput.jsx";
 import { HelloWorld } from "./HelloWorld";
@@ -10,6 +11,11 @@ import { UncontrolledLogin } from "./UncontrolledLogin.jsx";
 import { Welcome } from "./Welcome";
 
 export function App() {
+  const color = [
+    { id: 1, name: 'Negro' },
+    { id: 2, name: 'Gris' },
+    { id: 3, name: 'Rosa' },
+  ];
   function fechaApp() {
     const data = new Date()
     alert(data)
@@ -20,6 +26,9 @@ export function App() {
   return (
     <div>
       <h1>My awesome react</h1>
+      <hr />
+      <h1>COLORES</h1>
+      <Colors colorArray={color} />
       <hr />
       <HelloWorld />
       <hr />
