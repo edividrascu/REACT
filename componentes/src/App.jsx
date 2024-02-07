@@ -7,6 +7,7 @@ import { HelloWorld } from "./HelloWorld";
 
 import Login from './Login';
 import MouseClicker from "./MouseClicker.jsx";
+import TodoList from "./TodoList.jsx";
 import { UncontrolledLogin } from "./UncontrolledLogin.jsx";
 import { Welcome } from "./Welcome";
 
@@ -27,9 +28,6 @@ export function App() {
     <div>
       <h1>My awesome react</h1>
       <hr />
-      <h1>COLORES</h1>
-      <Colors colorArray={color} />
-      <hr />
       <HelloWorld />
       <hr />
       <Welcome name="John" age={16} />
@@ -46,8 +44,11 @@ export function App() {
       {/* <UncontrolledLogin/> */}
       <br />
       <FocusableInput/>
+      <h1>COLORES</h1>
+      <Colors colorArray={color} />
       <hr />
-      
+      <TodoList/>
+      <hr />
     </div>
   );
 }
