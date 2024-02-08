@@ -1,26 +1,28 @@
-// crear una lista de cosas que hacer al darle al boton se añaden nuevas LI a la UL
 import { useState } from 'react';
 
 function TodoList() {
-    // hacemos  constantes para guardar los elementos
-  const [tarea, setTarea] = useState(''); // Estado para almacenar la tarea ingresada
-  const [tareas, setTareas] = useState([]); // Estado para almacenar la lista de tareas
+  const [tarea, setTarea] = useState('');
+  const [tareas, setTareas] = useState([]);
 
   const handleChange = (event) => {
-    // Manejar cambios en el input y actualizar el estado de las TODOOO
     setTarea(event.target.value);
   };
 
   const agregarTarea = () => {
-    // Agregar la tarea actual al estado de la lista de tareas
     setTareas([...tareas, tarea]);
-    // Limpiar el input después de agregar la tarea PARA PODER ESCRIBIR OTRA
-    setTarea([]);
+    setTarea(''); // Limpiar el input después de agregar la tarea
   };
-//   hacemos una funcion para eliminar los todos
+
+  const handleEliminarTarea = (index) => {
+    const nuevasTareas = [...tareas];
+    nuevasTareas.splice(index, 1);
+    setTareas(nuevasTareas);
+  };
+
   const handleResetTodo = () => {
-    setTareas([]); // Limpiar todas las tareas estableciendo el array en vacío
+    setTareas([]);
   };
+
   return (
     <div>
       <label>
@@ -37,11 +39,15 @@ function TodoList() {
       <ul>
         <h3>Tareas pendientes</h3>
         {tareas.map((tarea, index) => (
-            // añadimos un checkbox por si acabamos la tarea
-          <li key={index}>{tarea} <input type="checkbox" /></li>
+          <li key={index}>
+            {tarea}
+            <input type="checkbox" />
+            {/*                                 con el index el boton sabe que tarea debe eliminar*/}
+            <button onClick={() => handleEliminarTarea(index)}>Eliminar</button>
+          </li>
         ))}
       </ul>
-      <button onClick={handleResetTodo} >ELIMINAR TODO</button>
+      <button onClick={handleResetTodo}>ELIMINAR TODO</button>
     </div>
   );
 }
