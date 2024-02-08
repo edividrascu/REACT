@@ -32,6 +32,10 @@ const Login = ({ onLogin }) => {
         <input id="username" name="username" type="text" value={formData.username} onChange={handleChange} />
       </div>
       <div>
+        <label htmlFor="age">age:</label>
+        <input id="age" name="age" type="text" value={formData.age} onChange={handleChange} />
+      </div>
+      <div>
         <label htmlFor="password">Password:</label>
         <input id="password" name="password" type="password" value={formData.password} onChange={handleChange} />
       </div>
@@ -43,7 +47,7 @@ const Login = ({ onLogin }) => {
         Login
       </button>
       <button onClick={resetForm}>Reset</button>
-      <Welcome name={formData.username} />
+      <Welcome name={formData.username} age={formData.age} />
     </form>
   );
 };

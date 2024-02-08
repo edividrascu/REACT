@@ -4,6 +4,7 @@ import Colors from "./Colors.jsx";
 import Counter from "./Counter.jsx";
 import FocusableInput from "./FocusableInput.jsx";
 import { HelloWorld } from "./HelloWorld";
+import "./index.css";
 
 import Login from './Login';
 import MouseClicker from "./MouseClicker.jsx";
@@ -17,6 +18,7 @@ export function App() {
     { id: 2, name: 'Gris' },
     { id: 3, name: 'Rosa' },
   ];
+  
   function fechaApp() {
     const data = new Date()
     alert(data)
@@ -24,13 +26,15 @@ export function App() {
   const handleLogin = (userData) => {
     console.log(userData);
   };
+  <title>React</title> 
   return (
-    <div>
+    <div className="App">
+      
       <h1>My awesome react</h1>
       <hr />
       <HelloWorld />
       <hr />
-      <Welcome name="John" age={16} />
+      <Welcome className="Welcome" name="Alfredo" age={19} />
       <hr />
       <AlertClock dataAlert={fechaApp} />
       <hr />
@@ -44,6 +48,7 @@ export function App() {
       {/* <UncontrolledLogin/> */}
       <br />
       <FocusableInput/>
+      <hr />
       <h1>COLORES</h1>
       <Colors colorArray={color} />
       <hr />

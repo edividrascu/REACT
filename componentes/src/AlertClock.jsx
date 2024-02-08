@@ -1,7 +1,7 @@
 
 function AlertClock({dataAlert}) {
   return (
-    <button onClick={dataAlert}>AlertClock</button>
+    <button className="AlertClock" onClick={dataAlert}>AlertClock</button>
   )
 }
 

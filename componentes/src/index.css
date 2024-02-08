@@ -1,0 +1,203 @@
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  margin: 20px 0;
+}
+body {
+  background: black;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 23px;
+}
+
+.App {
+  width: 30%;
+  margin: 6rem auto;
+  text-align: center;
+  background: black;
+  animation: combined-animations 3s linear infinite;
+}
+.Welcome {
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  border: 1px solid;
+  border-image: linear-gradient(to left, rgb(5, 179, 115), #a20000);
+  border-image-slice: 1;
+  margin: 10px;
+}
+
+@keyframes combined-animations {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent, inset 0 0 0 0 transparent;
+  }
+  50% {
+    box-shadow: 19px 0 20px 20px rgba(212, 6, 6, 0.55),
+      inset 19px 0 34px -6px rgb(5, 179, 115);
+  }
+}
+
+.MouseClicker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-image: linear-gradient(to left, rgb(5, 179, 115), #a20000);
+  border-image-slice: 1;
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  color: white;
+  width: 70%;
+  height: 60px;
+  margin: 0 auto;
+}
+.MouseClicker:hover {
+  animation: blur-out-expand 0.4s linear both;
+}
+@keyframes blur-out-expand {
+  0% {
+    transform: scale(1);
+    filter: blur(0.01px);
+  }
+  100% {
+    transform: scale(2);
+    filter: blur(12px);
+    opacity: 0;
+  }
+}
+
+.AlertClock {
+  border: 1px solid;
+  border-image: linear-gradient(to left, rgb(5, 179, 115), #a20000);
+  border-image-slice: 1;
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  color: white;
+  width: 70%;
+  height: 60px;
+  margin: 0 auto;
+}
+.AlertClock:hover {
+  animation: rotate-scale-up-diagonal-left 0.8s linear both;
+}
+@keyframes rotate-scale-up-diagonal-left {
+  0% {
+    transform: scale(1) rotate3d(1, 1, 0, 0deg);
+  }
+  50% {
+    transform: scale(2) rotate3d(1, 1, 0, -180deg);
+  }
+  100% {
+    transform: scale(1) rotate3d(1, 1, 0, -360deg);
+  }
+}
+
+.container-counter {
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+}
+
+.counter-display {
+  margin: 0;
+  text-align: center;
+  width: 50px;
+  font-size: 32px;
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+
+  color: black;
+}
+
+.boton {
+  width: auto;
+  height: 40px;
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+font-size: 15px;
+  color: black;
+  margin: 5px;
+}
+
+.boton :hover {
+  animation: shadow-pop-top-left 0.4s linear both;
+}
+@keyframes shadow-pop-top-left {
+  0% {
+    box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e,
+      0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: -1px -1px #3e3e3e, -2px -2px #3e3e3e, -3px -3px #3e3e3e,
+      -4px -4px #3e3e3e, -5px -5px #3e3e3e, -6px -6px #3e3e3e, -7px -7px #3e3e3e,
+      -8px -8px #3e3e3e;
+    transform: translateX(8px) translateY(8px);
+  }
+}
+.clock-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.h3Data{
+    background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+
+}
+.clock-face {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 10px double ;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+}
+
+.hour-hand, .minute-hand, .second-hand {
+    position: absolute;
+    height: 2px;
+    transform-origin: 100%;
+    top: 50%;
+    
+    transform: translate(-50%, -50%); /* Asegura que las manecillas estén centradas */
+}
+
+
+.hour-hand {
+    background-color: #efe00b;
+    width: 40%;
+    left: 10%;
+    top: 50%;
+}
+
+.minute-hand {
+    background-color: #6fb31d;
+    width: 47%;
+    left: 3%;
+}
+
+.second-hand {
+    background-color: #d00;
+    width: 45%;
+    left: 4%;
+    top: 50%;
+}
+
+.center-circle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

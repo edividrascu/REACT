@@ -1,6 +1,6 @@
 import { useEffect, useState , useRef } from "react"
 import CounterDisplay from "./CounterDisplay";
-import "./Counter.css";
+import "./index.css";
 function Counter({ valorIni, valorDeAumento }) {
   // Inicializa el estado para el contador
   const [counter, setCounter] = useState(valorIni);
