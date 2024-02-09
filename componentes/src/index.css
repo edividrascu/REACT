@@ -19,6 +19,11 @@ body {
   background: black;
   animation: combined-animations 3s linear infinite;
 }
+h1,h2{
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 .Welcome {
   background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
   border: 1px solid;
@@ -117,7 +122,7 @@ body {
   width: auto;
   height: 40px;
   background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
-font-size: 15px;
+  font-size: 15px;
   color: black;
   margin: 5px;
 }
@@ -139,65 +144,101 @@ font-size: 15px;
   }
 }
 .clock-container {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-.h3Data{
-    background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
-
+.h3Data {
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
 }
 .clock-face {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border: 10px double ;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 10px double;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
 }
 
-.hour-hand, .minute-hand, .second-hand {
-    position: absolute;
-    height: 2px;
-    transform-origin: 100%;
-    top: 50%;
-    
-    transform: translate(-50%, -50%); /* Asegura que las manecillas estén centradas */
-}
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  height: 2px;
+  transform-origin: 100%;
+  top: 50%;
 
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Asegura que las manecillas estén centradas */
+}
 
 .hour-hand {
-    background-color: #efe00b;
-    width: 40%;
-    left: 10%;
-    top: 50%;
+  background-color: #efe00b;
+  width: 40%;
+  left: 10%;
+  top: 50%;
 }
 
 .minute-hand {
-    background-color: #6fb31d;
-    width: 47%;
-    left: 3%;
+  background-color: #6fb31d;
+  width: 47%;
+  left: 3%;
 }
 
 .second-hand {
-    background-color: #d00;
-    width: 45%;
-    left: 4%;
-    top: 50%;
+  background-color: #d00;
+  width: 45%;
+  left: 4%;
+  top: 50%;
 }
 
 .center-circle {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.boton-toggle{
+  background: linear-gradient(to right, rgb(5, 179, 115), #a20000);
+  width: 150px;
+  height: 50px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+.boton-toggle:hover {
+  animation: jello-diagonal 0.9s linear both;
+}
+@keyframes jello-diagonal {
+  0% {
+    transform: skew(0deg 0deg);
+  }
+  30% {
+    transform: skew(25deg 25deg);
+  }
+  40% {
+    transform: skew(-15deg, -15deg);
+  }
+  50% {
+    transform: skew(15deg, 15deg);
+  }
+  65% {
+    transform: skew(-5deg, -5deg);
+  }
+  75% {
+    transform: skew(5deg, 5deg);
+  }
+  100% {
+    transform: skew(0deg 0deg);
+  }
+}

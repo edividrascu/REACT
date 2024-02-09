@@ -1,6 +1,7 @@
 import AlertClock from "./AlertClock.jsx";
 import Clock from "./Clock.jsx";
 import Colors from "./Colors.jsx";
+import Container from "./Container.jsx";
 import Counter from "./Counter.jsx";
 import FocusableInput from "./FocusableInput.jsx";
 import { HelloWorld } from "./HelloWorld";
@@ -28,9 +29,8 @@ export function App() {
   };
   <title>React</title> 
   return (
-    <div className="App">
+    <Container className="App" title={<h1>My awesome react</h1>}>
       
-      <h1>My awesome react</h1>
       <hr />
       <HelloWorld />
       <hr />
@@ -54,7 +54,7 @@ export function App() {
       <hr />
       <TodoList/>
       <hr />
-    </div>
+    </Container>
   );
 }
 
