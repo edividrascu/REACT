@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import "./index.css"; // Asegúrate de importar tu archivo de estilos
+import { useLanguage } from "./LanguageContext"; // Asegúrate de importar correctamente
 
 export default function Clock() {
     const [date, setDate] = useState(new Date());
+    const language = useLanguage(); // Obtener el idioma actual
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -13,6 +14,16 @@ export default function Clock() {
         return () => clearInterval(intervalId);
     }, [date]);
 
+    const getLocalizedText = () => {
+      switch (language) {
+        case 'es':
+          return "La hora actual es: ";
+        case 'it':
+          return "L'ora attuale è: ";
+        default:
+          return "The current time is: ";
+      }
+    };
     return (
         <div className="clock-container">
             <div className="clock-face">
@@ -22,9 +33,8 @@ export default function Clock() {
                 <div className="center-circle"></div>
             </div>
             <div>
-            <h3 className="h3Data">{date.toLocaleTimeString()}</h3>
-            
-          </div>
+              <h3 className="h3Data">{getLocalizedText() + date.toLocaleTimeString()}</h3>
+            </div>
         </div>
     );
 }
