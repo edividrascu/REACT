@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { GithubUser } from './GithubUser';
+import GithubUser from './GithubUser';  // Importa como export por defecto (sin llaves)
+
 
 const GithubUsers = () => {
   const [inputValue, setInputValue] = useState('');
