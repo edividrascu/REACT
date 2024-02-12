@@ -15,6 +15,7 @@ import TodoList from "./TodoList.jsx";
 import { UncontrolledLogin } from "./UncontrolledLogin.jsx";
 import { Welcome } from "./Welcome";
 import GithubUsers from "./GithubUsers.jsx";
+import LocationComponent from "./LocationComponent.jsx";
 
 export function App() {
   const [lenguage,setLenguage]= useState('en')
@@ -71,7 +72,7 @@ export function App() {
         <TodoList/>
         <hr />
         <GithubUsers />
-      
+        <LocationComponent/>
     </Container>
   );
 }
