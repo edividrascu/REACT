@@ -14,7 +14,7 @@ import MouseClicker from "./MouseClicker.jsx";
 import TodoList from "./TodoList.jsx";
 import { UncontrolledLogin } from "./UncontrolledLogin.jsx";
 import { Welcome } from "./Welcome";
-import { GithubUser } from "./GithubUser.jsx";
+import GithubUsers from "./GithubUsers.jsx";
 
 export function App() {
   const [lenguage,setLenguage]= useState('en')
@@ -70,7 +70,7 @@ export function App() {
         <hr />
         <TodoList/>
         <hr />
-        <GithubUser username="midudev"/>
+        <GithubUsers />
       
     </Container>
   );

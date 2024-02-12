@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 
 export function GithubUser({ username }) {
   const [data, setData] = useState(null);
@@ -32,7 +32,7 @@ export function GithubUser({ username }) {
       {error && <h1>There has been an error;</h1>}
       {data && (
         <div>
-            <h2>FETCH GITHUB</h2>
+          
           <h3>Name: {data.name}</h3>
           <p>Login: {data.login}</p>
           <img src={data.avatar_url} alt="User Avatar" style={{ width: "100px", height: "100px" }} />
