@@ -1,12 +1,16 @@
 
-import { HelloWorld } from "./HelloWorld";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Welcome from './Welcome';  
 
-export function App() {
+
+const App = () => {
   return (
-    <div>
-      <h1>My awesome react</h1>
-      <hr />
-      <HelloWorld />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome name="EDDY" />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
+
+export default App;
