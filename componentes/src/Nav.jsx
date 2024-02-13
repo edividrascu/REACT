@@ -12,6 +12,9 @@ function Nav() {
             <li>
               <Link to="/users">Github Users</Link>
             </li>
+            <li>
+              <Link to="/notFound">Not Found</Link>
+            </li>
           </ul>
         </nav>
   )
