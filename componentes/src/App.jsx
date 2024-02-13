@@ -1,15 +1,13 @@
-
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Welcome from './Welcome';  
-
+import Counter from './Counter';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Welcome name="EDDY" />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Welcome name="EDDY" />} />
+      <Route path="/counter" element={<Counter valorIni={0} valorDeAumento={10}/>} />
+    </Routes>
   );
 };
 
