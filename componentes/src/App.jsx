@@ -46,7 +46,7 @@ export function App() {
         <hr />
         <AlertClock dataAlert={fechaApp} />
         <hr />
-        <Counter valorIni={0} valorDeAumento={10}/>
+        <Counter valorIni={0} valorDeAumento={1}/>
         <hr />
         <div>
         <select name="selectLenguage" id="" onChange={(e) => handleSetLenguage(e.target.value)}>
