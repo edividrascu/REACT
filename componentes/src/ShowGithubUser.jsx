@@ -1,14 +1,26 @@
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import GithubUser from './GithubUser';
 
 const ShowGithubUser = () => {
   const { username } = useParams();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    
+    fetch(`https://api.github.com/users/`)
+      .then(response => response.json())
+      .then(data => setUser(data));
+  }, [username]);
+
+  if (!user) {
+    return <p>Cargando...</p>;
+  }
 
   return (
     <div>
-      <h3>Github User Details</h3>
+      <h2>Detalles de Usuario de GitHub</h2>
+      <p>Nombre de usuario: {user.login}</p>
       
-      <GithubUser username={username} />
     </div>
   );
 };

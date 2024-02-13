@@ -15,6 +15,9 @@ function Nav() {
             <li>
               <Link to="/notFound">Not Found</Link>
             </li>
+            <li>
+              <Link to="/users/">users</Link>
+            </li>
           </ul>
         </nav>
   )
