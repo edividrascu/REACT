@@ -1,5 +1,6 @@
 import { useState } from "react"
 import CounterDisplay from "./CounterDisplay";
+import { Link } from 'react-router-dom';
 // import "./Counter.css";
 function Counter({ valorIni, valorDeAumento }) {
   
@@ -22,6 +23,8 @@ function Counter({ valorIni, valorDeAumento }) {
 
       {/* Botón de reset */}
       <button className="boton boton-reset" onClick={() => setCounter(valorIni)}>Restablecerr</button>
+      <Link to="/">go to Welcome</Link>
+
     </div>
   );
 }
