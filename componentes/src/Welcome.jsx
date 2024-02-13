@@ -8,9 +8,6 @@ export function Welcome({ name = 'alguien' }) {
       <p>Welcome, <strong>{name}</strong>!</p>
       <Age age={20}/>
       <p>Happy coding!</p>
-      <Link to="/counter">Go to counter</Link>
-      <br />
-      <Link to="/users">Go to users</Link>
     </div>
   );
 }

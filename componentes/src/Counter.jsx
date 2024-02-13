@@ -23,7 +23,7 @@ function Counter({ valorIni, valorDeAumento }) {
 
       {/* Botón de reset */}
       <button className="boton boton-reset" onClick={() => setCounter(valorIni)}>Restablecerr</button>
-      <Link to="/">go to Welcome</Link>
+      
 
     </div>
   );
