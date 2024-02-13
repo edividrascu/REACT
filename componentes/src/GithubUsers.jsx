@@ -24,7 +24,7 @@ const GithubUsers = () => {
       <div>
         {searchClicked && <GithubUser username={inputValue} />}
       </div>
-      
+      <Link to="/">go to Welcome</Link>
     </div>
   );
 };

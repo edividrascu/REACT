@@ -1,11 +1,10 @@
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Welcome from './Welcome';
 import Counter from './Counter';
 import GithubUsers from './GithubUsers';
-import ShowGithubUser from './ShowGithubUser';
 import Nav from './Nav';
-import GithubUserList from './GithubUserList'; // Import the new component
+import GithubUserList from './GithubUserList';
+import MyFormComponent from './MyFormComponent';
 const NotFound = () => (
   <div>
     <h2>404 - Not Found</h2>
@@ -23,10 +22,10 @@ const App = () => {
           <Route path="/counter" element={<Counter valorIni={1} valorDeAumento={10} />} />
           <Route path="/users" element={<GithubUsers />} />
           
-          <Route path="/users" element={<GithubUserList />} />
-          
-          <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route index element={<p>Agregar un usuario y seleccionarlo</p>} />
           <Route path="/notFound" element={<NotFound />} />
+          <Route path='/MyForm' element={<MyFormComponent />} />
+          <Route path="/users" element={<GithubUserList />} />
         </Routes>
       </div>
     </Router>

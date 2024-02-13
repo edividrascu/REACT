@@ -6,10 +6,17 @@ const ShowGithubUser = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    
-    fetch(`https://api.github.com/users/`)
-      .then(response => response.json())
-      .then(data => setUser(data));
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        const data = await response.json();
+        setUser(data);
+      } catch (error) {
+        console.error('Error fetching user:', error);
+      }
+    };
+
+    fetchUser();
   }, [username]);
 
   if (!user) {

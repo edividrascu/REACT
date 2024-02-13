@@ -18,6 +18,9 @@ function Nav() {
             <li>
               <Link to="/users/">users</Link>
             </li>
+            <li>
+              <Link to="/MyForm">MyForm</Link>
+            </li>
           </ul>
         </nav>
   )
