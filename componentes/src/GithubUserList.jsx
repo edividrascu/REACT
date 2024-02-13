@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const GithubUserList = () => {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -11,10 +10,8 @@ const GithubUserList = () => {
         const response = await fetch('https://api.github.com/users');
         const data = await response.json();
         setUsers(data);
-        setLoading(false);
       } catch (error) {
-        console.error('Error fetching users:', error);
-        setLoading(false);
+        console.error('Error fetching GitHub users:', error);
       }
     };
 
@@ -23,21 +20,14 @@ const GithubUserList = () => {
 
   return (
     <div>
-      <h2>Github Users List</h2>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <ul>
-          {users.map(user => (
-            <li key={user.login}>
-              {/* Modifica el enlace */}
-              <Link to={`/users/${user.login}`}>{user.login}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
-      {/* Outlet para mostrar el contenido de las rutas secundarias */}
-      <Outlet />
+      <h2>GitHub Users</h2>
+      <ul>
+        {users.map((user) => (
+          <li key={user.login}>
+            <Link to={`/users/${user.login}`}>{user.login}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

@@ -10,7 +10,7 @@ function Nav() {
               <Link to="/counter">Counter</Link>
             </li>
             <li>
-              <Link to="/users">Github Users</Link>
+              <Link to="/githubUsers">Github Users</Link>
             </li>
             <li>
               <Link to="/notFound">Not Found</Link>

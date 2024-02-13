@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GithubUser } from './GithubUser';
-import { Link } from 'react-router-dom';
+
 const GithubUsers = () => {
   const [inputValue, setInputValue] = useState('');
   const [searchClicked, setSearchClicked] = useState(false);
@@ -24,7 +24,7 @@ const GithubUsers = () => {
       <div>
         {searchClicked && <GithubUser username={inputValue} />}
       </div>
-      <Link to="/">go to Welcome</Link>
+      
     </div>
   );
 };

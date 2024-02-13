@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const ShowGithubUser = () => {
   const { username } = useParams();
@@ -12,7 +12,7 @@ const ShowGithubUser = () => {
         const data = await response.json();
         setUser(data);
       } catch (error) {
-        console.error('Error fetching user:', error);
+        console.error(`Error fetching GitHub user ${username}:`, error);
       }
     };
 
@@ -20,13 +20,16 @@ const ShowGithubUser = () => {
   }, [username]);
 
   if (!user) {
-    return <p>Cargando...</p>;
+    return <p>Loading...</p>;
   }
 
   return (
     <div>
-      <h2>Detalles de Usuario de GitHub</h2>
-      <p>Nombre de usuario: {user.login}</p>
+      <h2>{user.login}</h2>
+      <p>Name: {user.name}</p>
+      <img src={user.avatar_url} alt="User Avatar" style={{ width: "100px", height: "100px" }} />
+      <br />
+      <Link to="/users"><strong color='red'>Back</strong></Link>
       
     </div>
   );

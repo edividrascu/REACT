@@ -1,5 +1,4 @@
 
-import { Link } from 'react-router-dom';
 import Age from './Age';
 
 export function Welcome({ name = 'alguien' }) {
