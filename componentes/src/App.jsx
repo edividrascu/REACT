@@ -22,11 +22,12 @@ const App = () => {
           <Route path="/" element={<Welcome name="EDDY" />} />
           <Route path="/counter" element={<Counter valorIni={1} valorDeAumento={10} />} />
           <Route path="/githubUsers" element={<GithubUsers />} />
-          <Route index element={<p>Agregar un usuario y seleccionarlo</p>} />
           <Route path="*" element={<NotFound />} />
           <Route path='/MyForm' element={<MyFormComponent />} />
-          <Route path="/users" element={<GithubUserList />} />
-          <Route path="/users/:username" element={<ShowGithubUser />} />
+          <Route path="/users" element={<GithubUserList/>}>
+                    <Route path=":username" element={<ShowGithubUser/>}/>
+                    <Route index element={<h3>Add a user and select it</h3>} />
+                </Route>
         </Routes>
       </div>
     </Router>

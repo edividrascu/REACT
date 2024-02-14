@@ -1,35 +1,43 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react"
+import { Link, Outlet } from "react-router-dom"
 
-const GithubUserList = () => {
-  const [users, setUsers] = useState([]);
+function GithubUserList() {
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch('https://api.github.com/users');
-        const data = await response.json();
-        setUsers(data);
-      } catch (error) {
-        console.error('Error fetching GitHub users:', error);
-      }
-    };
-
-    fetchUsers();
-  }, []);
+    const [data,setData] = useState([])
+  
+    useEffect(()=>{
+      fetch(`https://api.github.com/users`)
+      .then(response=>{
+          return response.json()
+      })
+      .then(json=>{
+        
+        setData(json)
+      })
+      .catch(error=>{
+        console.log(error)
+      })
+    },[])
 
   return (
-    <div>
-      <h2>GitHub Users</h2>
-      <ul>
-        {users.map((user) => (
-          <li key={user.login}>
-            <Link to={`/users/${user.login}`}>{user.login}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
 
-export default GithubUserList;
+    <div className="github-users"> 
+        <h2>Github users</h2>
+        <ul>
+            {data.map((user)=>{
+
+                return(
+                <li key={user.id}>
+                    <Link to={`/users/${user.login}`}>{user.login}</Link> 
+                </li>)
+            })}
+        </ul>
+        <hr />
+        <Outlet/>
+    </div>
+
+    )
+
+}
+
+export default GithubUserList
