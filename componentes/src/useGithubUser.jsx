@@ -1,25 +1,29 @@
-import useSWR from "swr";
+import { SWRConfig } from 'swr';
+import useSWR from 'swr';
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+const customFetcher = (url) => fetch(url).then((res) => res.json());
 
-export function useGithubUser(username) {
-
-  if (username === null) {
-    return { data: null, error: "Nombre de usuario nulo", fetchDataManually: () => {} };
-  }
-
-
-  const { data, error, isValidating, revalidate } = useSWR(
-    `https://api.github.com/users/${username}`,
-    fetcher
+function algunaFuncion({ Component, pageProps }) {
+  return (
+    <SWRConfig value={{ fetcher: customFetcher }}>
+        {/* el "termineitor por aqui" */}
+      <Component {...pageProps} /> 
+    </SWRConfig>
   );
+}
+
+export function MyComponent() {
+  const { data, error } = useSWR('https://api.example.com/data');
 
 
-  const fetchDataManually = () => {
-   
-    revalidate();
-  };
-
- 
-  return { data, error, isValidating, fetchDataManually };
+  return (
+    <div>
+      {data ? (
+        <p>Data: {data}</p>
+      ) : (
+        <p>Loading...</p>
+      )}
+      {error && <p>Error: {error}</p>}
+    </div>
+  );
 }
