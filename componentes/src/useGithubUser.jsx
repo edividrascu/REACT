@@ -1,29 +1,26 @@
-import { SWRConfig } from 'swr';
-import useSWR from 'swr';
+import useSWR, { mutate } from "swr";
 
-const customFetcher = (url) => fetch(url).then((res) => res.json());
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
-function algunaFuncion({ Component, pageProps }) {
-  return (
-    <SWRConfig value={{ fetcher: customFetcher }}>
-        {/* el "termineitor por aqui" */}
-      <Component {...pageProps} /> 
-    </SWRConfig>
+export function useGithubUser(username) {
+
+  if (username === null) {
+    return { data: null, error: "Nombre de usuario nulo", fetchDataManually: () => {} };
+  }
+
+  const { data, error, isValidating } = useSWR(
+    `https://api.github.com/users/${username}`,
+    fetcher
   );
-}
 
-export function MyComponent() {
-  const { data, error } = useSWR('https://api.example.com/data');
+  const fetchDataManually = async () => {
+    // Utilizamos el MUTATE 
+    try {
+      await mutate(`https://api.github.com/users/${username}`);
+    } catch (error) {
+      console.error("Error al actualizar los datos:", error);
+    }
+  };
 
-
-  return (
-    <div>
-      {data ? (
-        <p>Data: {data}</p>
-      ) : (
-        <p>Loading...</p>
-      )}
-      {error && <p>Error: {error}</p>}
-    </div>
-  );
+  return { data, error, isValidating, fetchDataManually };
 }
